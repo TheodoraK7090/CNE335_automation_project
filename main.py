@@ -1,6 +1,7 @@
 # This is the template code for the CNE335 Final Project
 # Justin Ellis
 # CNE 335 Fall
+import os
 
 def print_program_info():
     # TODO - Change your name
