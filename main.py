@@ -12,7 +12,7 @@ def print_program_info():
 if __name__ == '__main__':
     print_program_info()
     # TODO - Create a Server object
-    server_instance = Server('34.221.97.59')
+    server_instance = Server('35.86.136.74')
     # TODO - Call Ping method and print the results
     result = server_instance.ping()
     print("Ping Results:", result)
