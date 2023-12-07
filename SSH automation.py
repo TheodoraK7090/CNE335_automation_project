@@ -1,22 +1,19 @@
-#pip install paramiko --user
 import paramiko
 
 ssh = paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-ssh.connect(hostname='35.86.136.74',
+ssh.connect(hostname='35.92.45.28',
             username='ubuntu',
-            key_filename="C:\Users\teddy\Downloads\CNE335-Teddy-kp-ppk.ppk")
+            key_filename=r"C:\Users\teddy\Downloads\SSH-assignment-CNE335-teddy-kp-pem.pem")
 
-update command = sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get autoremove && sudo apt-get autoclean
-stdin, stdout, stdout = ssh.exec_command('lbs_release -a')  #stdin, stdout, and stderr are used for
-#how you want to get the commands.
-for line in stdout.read(),splitlines():
-    print(line)
+update_command = 'sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get autoremove && sudo apt-get autoclean'
 
-#This might be a better option for the above block...
-stdout = "lbs_realease"
+
+stdin, stdout, stderr = ssh.exec_command(update_command)
 line = stdout.readline()
 while line:
-    line = stdout.readline()  #or can use line = stdout.read().decode()
+    print(line)
+    line = stdout.readline()
+
 
 ssh.close()

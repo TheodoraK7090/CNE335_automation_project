@@ -12,7 +12,8 @@ def print_program_info():
 if __name__ == '__main__':
     print_program_info()
     # TODO - Create a Server object
-    server_instance = Server('35.86.136.74')
+    server_instance = Server('35.92.45.28')
     # TODO - Call Ping method and print the results
     result = server_instance.ping()
     print("Ping Results:", result)
+    result= server_instance.update()
